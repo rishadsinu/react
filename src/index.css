@@ -20,6 +20,12 @@ button{
   cursor: pointer;
   transition:background-color 0.5 ease ;
 }
+
+.complete-button{
+  padding: 8px 12px;
+  font-size: 1.4rem;
+  margin-left: 10px;  
+}
 .add-button{
   background-color: hsla(125, 47%, 55%);
 }
@@ -38,6 +44,13 @@ button{
 .move-button:hover{
   background-color: hsl(205, 90%, 55%);
 }
+.complete-button{
+  background-color:  hsla(125, 47%, 45%);;
+}
+.complete-button:hover{
+  background-color:  hsla(125, 47%, 55%);;
+}
+
 input[type="text"]{
   font-size: 1.6rem;
   padding: 10px;
@@ -69,3 +82,4 @@ li{
   font-size: 1.4rem;
   margin-left: 10px;
 }
+

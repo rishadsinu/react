@@ -11,7 +11,7 @@ function ToDoList() {
 
     function addTask() {
         if (newTask.trim() !== "") {
-            setTasks(t => [...t, newTask]);
+            setTasks(t => [...t, {text:newTask, completed:false}]);
             setNewTask("")
         }
     }
@@ -39,9 +39,15 @@ function ToDoList() {
         }
     }
 
+    function toggleTaskCompletion(index) {
+        const updatedTasks = [...tasks]
+        updatedTasks[index].completed = !updatedTasks[index].completed
+        setTasks(updatedTasks)
+    }
+
     return (
         <div className='to-do-list'>
-            <h1>To-Do-List</h1>
+            <h1>DAY PLANNER</h1>
 
             <div>
                 <input
@@ -59,13 +65,9 @@ function ToDoList() {
 
             <ol>
                 {tasks.map((task, index) =>
-                    <li key={index}>
-                        <span className='text'>{task}</span>
-                        <button
-                            className='delete-button'
-                            onClick={() => deleteTask(index)}>
-                            Delete
-                        </button>
+                    <li key={index} className={task.completed ? 'completed': ''}>
+                        <span className='text'>{task.text}</span>
+                        
                         <button
                             className='move-button'
                             onClick={() => moveTaskUp(index)}>
@@ -75,6 +77,16 @@ function ToDoList() {
                             className='move-button'
                             onClick={() => moveTaskDown(index)}>
                             👇
+                        </button>
+                        <button
+                            className='delete-button'
+                            onClick={() => deleteTask(index)}>
+                            Delete
+                        </button>
+                        <button
+                            className='complete-button'
+                            onClick={() => toggleTaskCompletion(index)}>
+                            {task.completed ? 'Completed🎊' : 'Uncompleted'}
                         </button>
                     </li>
                 )}
