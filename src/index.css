@@ -38,6 +38,12 @@ button{
 .delete-button:hover{
   background-color:  hsl(10, 90%, 40%);
 }
+.edit-button{
+  background-color: hsl(10, 90%, 50%);
+}
+.edit-button:hover{
+  background-color:  hsl(10, 90%, 40%);
+}
 .move-button{
   background-color: hsl(205, 90%, 65%);
 }
@@ -82,4 +88,20 @@ li{
   font-size: 1.4rem;
   margin-left: 10px;
 }
+.edit-button{
+  padding: 8px 12px;
+  font-size: 1.4rem;
+  margin-left: 10px;
+}
 
+.completed {
+  background-color: hsl(120, 60%, 85%);
+  text-decoration: line-through; 
+  color: hsl(120, 60%, 30%); 
+}
+
+li {
+  background-color: hsl(0, 0%, 97%);
+  color: hsl(0, 0%, 0%);
+  font-weight: bold;
+}
